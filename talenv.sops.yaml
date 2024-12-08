@@ -45,7 +45,7 @@ master1bond0aDev: enx00a0985316a9
 master1bond0bDev: enx00a09862ab23
 master1bond1aDev: enx00a09870389e
 master1bond1bDev: enx00a0984c932a
-master1tailscaleIP: ENC[AES256_GCM,data:cy9ezC9ihc9ZRtqZc0+G,iv:WaDTRdlgqjMak3twg6cT2AwAOMg25Bp+B0rFa3LPacc=,tag:lXgvwAFmfFQxyPBBSA2WqA==,type:str]
+master1tailscaleIP: ENC[AES256_GCM,data:qIC6ZJSigYCStVQXxDY=,iv:tL0/ruWJhka+6et8fGMT4QnUQRprw8vMAcdcoZW6hVE=,tag:yxv3g1RAOGYN3M+IgqGpuA==,type:str]
 #
 master2hostname: k8s-master-2
 master2apiIP: 172.20.35.166
@@ -59,7 +59,7 @@ master2bond0aDev: enx00a098212532
 master2bond0bDev: enx00a09836df97
 master2bond1aDev: enx00a09839e45b
 master2bond1bDev: enx00a0986f9178
-master2tailscaleIP: ENC[AES256_GCM,data:6yJCzSKo7DoTvu9Oh4c=,iv:TAxrPne8h71NdTEv8Rd+o/aVzGsjzMrZhX/tnex3OAI=,tag:fnZO0/YZHjKRZE1VHVoS+w==,type:str]
+master2tailscaleIP: ENC[AES256_GCM,data:gd9kjnQGtEFga4U+i4A=,iv:m5dgOskjt1f/2qI27CdlSKwAOrelVkZUqPjoDdvYo4I=,tag:pET8AgERxHWdE3DL95lZdg==,type:str]
 #
 master3hostname: k8s-master-3
 master3apiIP: 172.20.35.167
@@ -73,7 +73,7 @@ master3bond0aDev: enx00a09860d6cd
 master3bond0bDev: enx00a09832fbaa
 master3bond1aDev: enx00a09842bffc
 master3bond1bDev: enx00a0984f167c
-master3tailscaleIP: ENC[AES256_GCM,data:/LNCp0Ff0EEqLIC7hQ==,iv:0g6asauEGLdEOX42Zb/ekJdowBWepZR/2pfGXc9bUCs=,tag:By7RBzVUkdkoVH37Ykm1zQ==,type:str]
+master3tailscaleIP: ENC[AES256_GCM,data:fzrRHJmpbaOaDziV,iv:Nde2P7/CsuONciaoz9pZUx9FCH87ksFv/ZIfc90qpnE=,tag:tFQSWa8MdJiPcrB2y57+8g==,type:str]
 #
 worker1hostname: k8s-worker-1-gpu
 worker1apiIP: 172.20.35.171
@@ -83,7 +83,7 @@ worker1installDisk: /dev/vda
 worker1v93apiDev: enx00a0985b3155
 worker1bond1aDev: enx00a0983608b1
 worker1bond1bDev: enx00a098450c96
-worker1tailscaleIP: ENC[AES256_GCM,data:0OeyAth6pUjVdhu6zw==,iv:fp9Dm54n4wK3YfqEouGAyZrYPY/9PvbcrD1W2331GJA=,tag:fIflXS0zMtBuIAf8072jPw==,type:str]
+worker1tailscaleIP: ENC[AES256_GCM,data:24703+OqkYsv9YTIAQw=,iv:Ai+zxZI9qVCjlSCLAmj9aQSiIWamOmDfnr1G1Pt6hoM=,tag:XHh2hl22YQ+TraY5aQGETw==,type:str]
 #
 worker2hostname: k8s-worker-2
 worker2apiIP: 172.20.35.172
@@ -93,7 +93,7 @@ worker2installDisk: /dev/vda
 worker2v93apiDev: enx00a098387305
 worker2bond1aDev: enx00a0985d505a
 worker2bond1bDev: enx00a0985193e9
-worker2tailscaleIP: ENC[AES256_GCM,data:mqQPtCtLNC/LBOUIzQ==,iv:fSgH9N6Dz8FdyMoDNX3a2IkzTsdvt/OC3q1Rw55ICtQ=,tag:zvg69GszdwCkM2A+79Qtnw==,type:str]
+worker2tailscaleIP: ENC[AES256_GCM,data:Q6eGP8s9QfyQKlDYh4E=,iv:LX/4LcqKiO/QDFNHPu4nIwmbv8ecCHWreq5fKJTIsM4=,tag:PEf2JvXXmof7Pih3KNKCLg==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -109,8 +109,8 @@ sops:
             NjZGaEQ5Tmp3RElGeHA1cXFkcnYyMUEKalpXi4RF8PtzO4vEAiwZ6rEmsG2S6vl/
             VEOP3SsMeKpx54LhEIH/Z988kj6zSTc06zkwOWHPwKYa6Fm5TJoA6w==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-12-08T02:01:29Z"
-    mac: ENC[AES256_GCM,data:nWmyJJ38XFLBjokuVyoFpLjolbyac61InCMjLy29mM4KqrA3ArOvMcMMudcpuoCoDTahZAIcKJbO2lvmq/w/Ph4Zzutxcrm7y8JB9E7mUOP1G7iev5v07OFYps0DB7LiuP2QIQ+rz1idAnrwlOp0lQURFxG2WOo2elzd25qOuFw=,iv:71v/NSnuUNjg/VJQq/s2qvvtIDJ2XvxBdDcYlkuFtFQ=,tag:ogo8jD5hzny6ocftvUvC6Q==,type:str]
+    lastmodified: "2024-12-08T11:53:58Z"
+    mac: ENC[AES256_GCM,data:LyroVSACxaVLdQ4xcHjcRlHXB1XeVFlWYSiKe6P0Byflig4vBfoew526Uu0jJBAX3Dkmr5H6MVQ3JlM3R5PeAKZv2oCo3Vf1nH7kRqhgB0HIfygQQlKjcb4XFDLR1nY37cPs0JQXNCnc7jgHlMwZWkygWYvbrP7yZcxuNLIiZ+s=,iv:HjTj6hXN4GfDn3zugt6hsCSkD5ebzqYrkSuhV2wo9WE=,tag:dOSxpIzoSUWJJn9E5elyWQ==,type:str]
     pgp: []
     encrypted_regex: ((?i)(tailscaleAuthKey|rwDummyIP|domainName|.*tailscaleIP$))
     version: 3.9.1
