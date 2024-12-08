@@ -1,0 +1,6 @@
+dev-k8s-master-1.yaml
+dev-k8s-master-2.yaml
+dev-k8s-master-3.yaml
+dev-k8s-worker-1-gpu.yaml
+dev-k8s-worker-2.yaml
+talosconfig

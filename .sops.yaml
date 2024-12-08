@@ -1,0 +1,18 @@
+
+# .sops.yaml
+---
+keys:
+  - &talos age1rjq2f6w8l5lqk354avpjafcaflv23h4lqqz8qxvqa0d0ve5su5ysr8jevr
+
+creation_rules:
+  - path_regex: talenv.sops.ya?ml
+    encrypted_regex: "((?i)(tailscaleAuthKey|rwDummyIP|domainName|.*tailscaleIP$))"
+    key_groups:
+      - age:
+          - *talos
+
+  - path_regex: .+\.sops\.yaml$
+    key_groups:
+      - age:
+          - *talos
+

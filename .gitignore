@@ -1,0 +1,8 @@
+# VScode SOPS plugin temp
+.decrypted~*
+
+# MacOS filesystem metadata file
+.DS_Store
+
+cilium-inline-manifest.yaml
+talenv-20241208.yaml

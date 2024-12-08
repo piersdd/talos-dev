@@ -1,0 +1,116 @@
+# talenv.sops.yaml
+clusterName: dev
+domainName: ENC[AES256_GCM,data:EVFTMWURIaxjfF4=,iv:QKF1dCsy2xROiQUGS1VgoXBTg/f/jz8zkXe8hKr7GpA=,tag:XHIZya4srNWHedUaqqV0Gw==,type:str]
+talosVersion: v1.8.3
+kubernetesVersion: v1.31.2
+#
+tailscaleAuthKey: ENC[AES256_GCM,data:BiypngS1v1kWxPFe09uQ7RWzcQS9DEiB+v5UH/WI3PGbDs+uchME1frO+s3/qeqUEAGgSm1rQsKdhT3AKOs=,iv:NitneDNV8xYUZCkIqXsQqBPTS/WHMJdEvOmPp0E6Nu8=,tag:LgbYU7D+pG61++7mvG0Bgw==,type:str]
+clusterSite: sb
+clusterRegion: tas
+#
+gateway: 172.20.35.161
+vip: 172.20.35.164
+ns1: 172.20.35.161
+ns2: 1.1.1.1
+rwDummyIP: ENC[AES256_GCM,data:AeCCxbwnofMQzHVhDAIHfn0=,iv:97hXq8wt8StSJPYBid+7U62rrbb8rYJZz6hMtqi5oyM=,tag:FeEzP06YI+OITGMhww99PQ==,type:str]
+#
+apiSubnetCIDR: 27
+apiSubnetVLAN: 91
+appServiceSubnetCIDR: 24
+appServiceVLAN: 80
+#
+etcd1Subnet: 10.13.1.0/24
+etcd1SubnetCIDR: 24
+etcdVLAN1: 131
+#
+etcd2Subnet: 10.13.2.0/24
+etcd2SubnetCIDR: 24
+etcdVLAN2: 132
+#
+nvmeofIPCIDR: 24
+nvmeofVLAN: 133
+#
+tailscaleSubnet: 100.64.0.0/10
+realworldVLAN: 752
+#
+master1hostname: k8s-master-1
+master1apiIP: 172.20.35.165
+master1etcd1IP: 10.13.1.5
+master1etcd2IP: 10.13.2.5
+master1nvmeofIP: 10.13.3.5
+master1appServiceIP: 172.20.33.14
+master1installDisk: /dev/vda
+master1MachineDisk_mayastor: /dev/sda
+master1bond0aDev: enx00a0985316a9
+master1bond0bDev: enx00a09862ab23
+master1bond1aDev: enx00a09870389e
+master1bond1bDev: enx00a0984c932a
+master1tailscaleIP: ENC[AES256_GCM,data:cy9ezC9ihc9ZRtqZc0+G,iv:WaDTRdlgqjMak3twg6cT2AwAOMg25Bp+B0rFa3LPacc=,tag:lXgvwAFmfFQxyPBBSA2WqA==,type:str]
+#
+master2hostname: k8s-master-2
+master2apiIP: 172.20.35.166
+master2etcd1IP: 10.13.1.6
+master2etcd2IP: 10.13.2.6
+master2nvmeofIP: 10.13.3.6
+master2appServiceIP: 172.20.33.15
+master2installDisk: /dev/vda
+master2MachineDisk_mayastor: /dev/sda
+master2bond0aDev: enx00a098212532
+master2bond0bDev: enx00a09836df97
+master2bond1aDev: enx00a09839e45b
+master2bond1bDev: enx00a0986f9178
+master2tailscaleIP: ENC[AES256_GCM,data:6yJCzSKo7DoTvu9Oh4c=,iv:TAxrPne8h71NdTEv8Rd+o/aVzGsjzMrZhX/tnex3OAI=,tag:fnZO0/YZHjKRZE1VHVoS+w==,type:str]
+#
+master3hostname: k8s-master-3
+master3apiIP: 172.20.35.167
+master3etcd1IP: 10.13.1.7
+master3etcd2IP: 10.13.2.7
+master3nvmeofIP: 10.13.3.7
+master3appServiceIP: 172.20.33.16
+master3installDisk: /dev/vda
+master3MachineDisk_mayastor: /dev/sda
+master3bond0aDev: enx00a09860d6cd
+master3bond0bDev: enx00a09832fbaa
+master3bond1aDev: enx00a09842bffc
+master3bond1bDev: enx00a0984f167c
+master3tailscaleIP: ENC[AES256_GCM,data:/LNCp0Ff0EEqLIC7hQ==,iv:0g6asauEGLdEOX42Zb/ekJdowBWepZR/2pfGXc9bUCs=,tag:By7RBzVUkdkoVH37Ykm1zQ==,type:str]
+#
+worker1hostname: k8s-worker-1-gpu
+worker1apiIP: 172.20.35.171
+worker1nvmeofIP: 10.13.3.11
+worker1appServiceIP: 172.20.33.17
+worker1installDisk: /dev/vda
+worker1v93apiDev: enx00a0985b3155
+worker1bond1aDev: enx00a0983608b1
+worker1bond1bDev: enx00a098450c96
+worker1tailscaleIP: ENC[AES256_GCM,data:0OeyAth6pUjVdhu6zw==,iv:fp9Dm54n4wK3YfqEouGAyZrYPY/9PvbcrD1W2331GJA=,tag:fIflXS0zMtBuIAf8072jPw==,type:str]
+#
+worker2hostname: k8s-worker-2
+worker2apiIP: 172.20.35.172
+worker2nvmeofIP: 10.13.3.12
+worker2appServiceIP: 172.20.33.18
+worker2installDisk: /dev/vda
+worker2v93apiDev: enx00a098387305
+worker2bond1aDev: enx00a0985d505a
+worker2bond1bDev: enx00a0985193e9
+worker2tailscaleIP: ENC[AES256_GCM,data:mqQPtCtLNC/LBOUIzQ==,iv:fSgH9N6Dz8FdyMoDNX3a2IkzTsdvt/OC3q1Rw55ICtQ=,tag:zvg69GszdwCkM2A+79Qtnw==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1rjq2f6w8l5lqk354avpjafcaflv23h4lqqz8qxvqa0d0ve5su5ysr8jevr
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBwUmswc1NPQ0U5TENxbkxs
+            dDNTWk9sWWFVelVLRHp6YjhXb2U0T2Qra2wwCjFVWXVQaGF5dktzSDZheFY1VmZE
+            MVFIZ3J0a0gvL2tJWkRMTzRFUVhHTncKLS0tIGhPT0FGSElJbkFOcWVsQzkvaWo1
+            NjZGaEQ5Tmp3RElGeHA1cXFkcnYyMUEKalpXi4RF8PtzO4vEAiwZ6rEmsG2S6vl/
+            VEOP3SsMeKpx54LhEIH/Z988kj6zSTc06zkwOWHPwKYa6Fm5TJoA6w==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-12-08T02:01:29Z"
+    mac: ENC[AES256_GCM,data:nWmyJJ38XFLBjokuVyoFpLjolbyac61InCMjLy29mM4KqrA3ArOvMcMMudcpuoCoDTahZAIcKJbO2lvmq/w/Ph4Zzutxcrm7y8JB9E7mUOP1G7iev5v07OFYps0DB7LiuP2QIQ+rz1idAnrwlOp0lQURFxG2WOo2elzd25qOuFw=,iv:71v/NSnuUNjg/VJQq/s2qvvtIDJ2XvxBdDcYlkuFtFQ=,tag:ogo8jD5hzny6ocftvUvC6Q==,type:str]
+    pgp: []
+    encrypted_regex: ((?i)(tailscaleAuthKey|rwDummyIP|domainName|.*tailscaleIP$))
+    version: 3.9.1
