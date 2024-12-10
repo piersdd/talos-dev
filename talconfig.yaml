@@ -299,6 +299,8 @@ controlPlane:
           - siderolabs/intel-ucode
           - siderolabs/tailscale
           - siderolabs/qemu-guest-agent
+        ## remove for production
+          - siderolabs/util-linux-tools
   patches:
     - |-
       - op: add
@@ -310,12 +312,16 @@ controlPlane:
       - op: add
         path: /machine/time
         value: 
+          servers:
+          ## Use hypervisor time sync
+            - /dev/ptp0
           disabled: false
-          servers: 
-            - 0.au.pool.ntp.org
-            - 1.au.pool.ntp.org
-            - 2.au.pool.ntp.org
-          bootTimeout: "2m0s"
+          # servers: 
+          #   - 0.au.pool.ntp.org
+          #   - 1.au.pool.ntp.org
+          #   - 2.au.pool.ntp.org
+          # bootTimeout: "2m0s"
+
  ## Mayastor control plane
     - |-
       - op: add
@@ -360,32 +366,27 @@ worker:
     - name: tailscale
       environment: 
         - TS_AUTHKEY=${tailscaleAuthKey}
-  # schematic:
-  #   customization:
-  #     extraKernelArgs:
-  #       - net.ifnames=1
-  #       - talos.platform=metal
-  #       - slab_nomerge
-  #       - pti=on
-  #       - console=ttyS0
-  #     systemExtensions:
-  #       officialExtensions:
-  #         - siderolabs/intel-ucode
-  #         - siderolabs/nvidia-container-toolkit-production
-  #         - siderolabs/nvidia-open-gpu-kernel-modules-production
-  #         - siderolabs/qemu-guest-agent
-  #         - siderolabs/tailscale
+  ## remove for production
+  schematic:
+    customization:
+      systemExtensions:
+        officialExtensions:
+        ## remove for production
+          - siderolabs/util-linux-tools
   patches:
     - |-
       - op: add
         path: /machine/time
         value: 
+          servers:
+          ## Use hypervisor time sync
+            - /dev/ptp0
           disabled: false
-          servers: 
-            - 0.au.pool.ntp.org
-            - 1.au.pool.ntp.org
-            - 2.au.pool.ntp.org
-          bootTimeout: "2m0s"
+          # servers: 
+          #   - 0.au.pool.ntp.org
+          #   - 1.au.pool.ntp.org
+          #   - 2.au.pool.ntp.org
+          # bootTimeout: "2m0s"
 
   # ## Nvidia GPU worker node
   #   - |-
