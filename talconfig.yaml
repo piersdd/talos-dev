@@ -57,9 +57,9 @@ nodes:
           - vlanId: ${etcdVLAN1}
             addresses:
               - ${master1etcd1IP}/${etcd1SubnetCIDR}
-          - vlanId: ${nvmeofVLAN}
+          - vlanId: ${nvmfVLAN}
             addresses:
-            - ${master1nvmeofIP}/${nvmeofIPCIDR}
+            - ${master1nvmfIP}/${nvmfIPCIDR}
 
   - hostname: ${master2hostname}
     ipAddress: ${master2apiIP}
@@ -98,9 +98,9 @@ nodes:
           - vlanId: ${etcdVLAN1}
             addresses:
               - ${master2etcd1IP}/${etcd1SubnetCIDR}
-          - vlanId: ${nvmeofVLAN}
+          - vlanId: ${nvmfVLAN}
             addresses:
-            - ${master2nvmeofIP}/${nvmeofIPCIDR}
+            - ${master2nvmfIP}/${nvmfIPCIDR}
 
   - hostname: ${master3hostname}
     ipAddress: ${master3apiIP}
@@ -138,9 +138,9 @@ nodes:
           - vlanId: ${etcdVLAN1}
             addresses:
               - ${master3etcd1IP}/${etcd1SubnetCIDR}
-          - vlanId: ${nvmeofVLAN}
+          - vlanId: ${nvmfVLAN}
             addresses:
-            - ${master3nvmeofIP}/${nvmeofIPCIDR}
+            - ${master3nvmfIP}/${nvmfIPCIDR}
 
   - hostname: ${worker1hostname}
     nodeLabels:
@@ -169,9 +169,9 @@ nodes:
           - vlanId: ${appServiceVLAN}
             addresses:
               - ${worker1appServiceIP}/${appServiceSubnetCIDR}
-          - vlanId: ${nvmeofVLAN}
+          - vlanId: ${nvmfVLAN}
             addresses:
-            - ${worker1nvmeofIP}/${nvmeofIPCIDR}
+            - ${worker1nvmfIP}/${nvmfIPCIDR}
     schematic:
       customization:
         extraKernelArgs:
@@ -243,9 +243,9 @@ nodes:
           - vlanId: ${appServiceVLAN}
             addresses:
               - ${worker2appServiceIP}/${appServiceSubnetCIDR}
-          - vlanId: ${nvmeofVLAN}
+          - vlanId: ${nvmfVLAN}
             addresses:
-            - ${worker2nvmeofIP}/${nvmeofIPCIDR}
+            - ${worker2nvmfIP}/${nvmfIPCIDR}
     schematic:
       customization:
         extraKernelArgs:
@@ -280,6 +280,7 @@ controlPlane:
   nameservers:
     - ${ns1}
     - ${ns2}
+  ## enable for production
   extensionServices:
     - name: tailscale
       environment: 
@@ -300,14 +301,16 @@ controlPlane:
           - siderolabs/qemu-guest-agent
         ## remove for production
           - siderolabs/util-linux-tools
+
   patches:
     - |-
       - op: add
         path: /machine/kubelet/nodeIP
-        validSubnets:
-          - ${apiSubnet}
+        value:
+          validSubnets:
+            - ${nvmfSubnet}
     - |-
-      - op: add
+      - op: replace
         path: /cluster/etcd/advertisedSubnets
         value:
           - ${etcd1Subnet}
@@ -315,18 +318,10 @@ controlPlane:
     - |-
       - op: add
         path: /machine/time
-        value: 
+        value:
           servers:
-          ## Use hypervisor time sync
             - /dev/ptp0
           disabled: false
-          # servers: 
-          #   - 0.au.pool.ntp.org
-          #   - 1.au.pool.ntp.org
-          #   - 2.au.pool.ntp.org
-          # bootTimeout: "2m0s"
-
- ## Mayastor control plane
     - |-
       - op: add
         path: /cluster/apiServer/admissionControl
@@ -337,19 +332,13 @@ controlPlane:
               kind: PodSecurityConfiguration
               exemptions:
                 namespaces:
-                  - mayastor
- ## Mayastor worker node (nodes hosting disks)
+                  - openebs
+   ## Mayastor worker node
     - |-
       - op: add
         path: /machine/sysctls
         value:
           vm.nr_hugepages: "1024"
-    - |-
-      - op: add
-        path: /machine/nodeLabels
-        value:
-          openebs.io/engine: "mayastor"
- ## Mayastor ??
     - |-
       - op: add
         path: /machine/kubelet/extraMounts
@@ -362,10 +351,12 @@ controlPlane:
               - rshared
               - rw
 
+
 worker:
   nameservers:
     - ${ns1}
     - ${ns2}
+  ## enable for production
   extensionServices:
     - name: tailscale
       environment: 
@@ -382,7 +373,7 @@ worker:
       - op: add
         path: /machine/kubelet/nodeIP
         validSubnets:
-          - ${apiSubnet}
+          - ${nvmfSubnet}
     - |-
       - op: add
         path: /machine/time
@@ -396,46 +387,14 @@ worker:
           #   - 1.au.pool.ntp.org
           #   - 2.au.pool.ntp.org
           # bootTimeout: "2m0s"
-
-  # ## Nvidia GPU worker node
-  #   - |-
-  #     - op: add
-  #       path: /machine/kernel
-  #       value: 
-  #         modules:
-  #           - name: nvidia
-  #           - name: nvidia_uvm
-  #           - name: nvidia_drm
-  #           - name: nvidia_modeset
-  #   - |-
-  #     - op: add
-  #       path: /machine/sysctls
-  #       value: 
-  #         net.core.bpf_jit_harden: 1
-
-
- ## Mayastor `openebs-hostpath` support
-    # - |-
-    #   - op: add
-    #     path: /machine/kubelet/extraMounts
-    #     value:
-    #       - destination: /var/local
-    #         type: bind
-    #         source: /var/local
-    #         options:
-    #           - bind
-    #           - rshared
-    #           - rw
-
-
-#  ## Mayastor worker node
-#     - |-
-#       - op: add
-#         path: /machine/sysctls
-#         value:
-#           vm.nr_hugepages: "1024"
-#     - |-
-#       - op: add
-#         path: /machine/nodeLabels
-#         value:
-#           openebs.io/engine: "mayastor"
+    - |-
+      - op: add
+        path: /machine/kubelet/extraMounts
+        value:
+          - destination: /var/local
+            type: bind
+            source: /var/local
+            options:
+              - bind
+              - rshared
+              - rw
