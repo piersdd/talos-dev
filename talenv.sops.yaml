@@ -14,6 +14,7 @@ ns1: 172.20.35.161
 ns2: 1.1.1.1
 rwDummyIP: ENC[AES256_GCM,data:AeCCxbwnofMQzHVhDAIHfn0=,iv:97hXq8wt8StSJPYBid+7U62rrbb8rYJZz6hMtqi5oyM=,tag:FeEzP06YI+OITGMhww99PQ==,type:str]
 #
+apiSubnet: 172.20.35.160/27
 apiSubnetCIDR: 27
 apiSubnetVLAN: 91
 appServiceSubnetCIDR: 24
@@ -109,8 +110,8 @@ sops:
             NjZGaEQ5Tmp3RElGeHA1cXFkcnYyMUEKalpXi4RF8PtzO4vEAiwZ6rEmsG2S6vl/
             VEOP3SsMeKpx54LhEIH/Z988kj6zSTc06zkwOWHPwKYa6Fm5TJoA6w==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-12-08T11:53:58Z"
-    mac: ENC[AES256_GCM,data:LyroVSACxaVLdQ4xcHjcRlHXB1XeVFlWYSiKe6P0Byflig4vBfoew526Uu0jJBAX3Dkmr5H6MVQ3JlM3R5PeAKZv2oCo3Vf1nH7kRqhgB0HIfygQQlKjcb4XFDLR1nY37cPs0JQXNCnc7jgHlMwZWkygWYvbrP7yZcxuNLIiZ+s=,iv:HjTj6hXN4GfDn3zugt6hsCSkD5ebzqYrkSuhV2wo9WE=,tag:dOSxpIzoSUWJJn9E5elyWQ==,type:str]
+    lastmodified: "2024-12-11T02:28:38Z"
+    mac: ENC[AES256_GCM,data:ggHhzbaOzVrG5GKv2LhykuyWGXB+BPTgB4Aw1QhU1NFUXd5ridywZ/+L7UW21wRJFfHv9ofeNHs66fNB/wH6KRrqHFdc+xfmP2fiqVxpaPbxRx3rOReGrZxjYYbM5+Nmmbwv2I6jJ+R+E9uDTgDT18zHr3EmzpkmhbH34ukTQZI=,iv:bOnPfeQUTg2dU6LTmM/4F/hVNEBQBtJ3CFWUnnWSD7M=,tag:LxOJV0AKTlBLWKItlbLFtQ==,type:str]
     pgp: []
     encrypted_regex: ((?i)(tailscaleAuthKey|rwDummyIP|domainName|.*tailscaleIP$))
     version: 3.9.1

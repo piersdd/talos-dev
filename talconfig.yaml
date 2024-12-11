@@ -188,6 +188,7 @@ nodes:
             - siderolabs/qemu-guest-agent
             - siderolabs/tailscale
     patches:
+  ## Nvidia GPU
       - |-
         - op: add
           path: /machine/kernel
@@ -202,7 +203,7 @@ nodes:
           path: /machine/sysctls
           value: 
             net.core.bpf_jit_harden: 1
-  ## Mayastor ??
+  ## OpenEBS Replicated
       - |-
         - op: add
           path: /machine/kubelet/extraMounts
@@ -259,7 +260,6 @@ nodes:
             - siderolabs/qemu-guest-agent
             - siderolabs/tailscale
     patches:
-  ## Mayastor ??
       - |-
         - op: add
           path: /machine/kubelet/extraMounts
@@ -271,7 +271,6 @@ nodes:
                 - bind
                 - rshared
                 - rw
-
 
 controlPlane:
   nodeLabels:
@@ -302,6 +301,11 @@ controlPlane:
         ## remove for production
           - siderolabs/util-linux-tools
   patches:
+    - |-
+      - op: add
+        path: /machine/kubelet/nodeIP
+        validSubnets:
+          - ${apiSubnet}
     - |-
       - op: add
         path: /cluster/etcd/advertisedSubnets
@@ -374,6 +378,11 @@ worker:
         ## remove for production
           - siderolabs/util-linux-tools
   patches:
+    - |-
+      - op: add
+        path: /machine/kubelet/nodeIP
+        validSubnets:
+          - ${apiSubnet}
     - |-
       - op: add
         path: /machine/time
