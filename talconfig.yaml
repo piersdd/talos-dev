@@ -280,7 +280,6 @@ controlPlane:
   nameservers:
     - ${ns1}
     - ${ns2}
-  ## enable for production
   extensionServices:
     - name: tailscale
       environment: 
@@ -300,7 +299,7 @@ controlPlane:
           - siderolabs/tailscale
           - siderolabs/qemu-guest-agent
         ## remove for production
-          - siderolabs/util-linux-tools
+          # - siderolabs/util-linux-tools
 
   patches:
     - |-
@@ -308,7 +307,7 @@ controlPlane:
         path: /machine/kubelet/nodeIP
         value:
           validSubnets:
-            - ${nvmfSubnet}
+            - ${apiSubnet}
     - |-
       - op: replace
         path: /cluster/etcd/advertisedSubnets
@@ -356,24 +355,16 @@ worker:
   nameservers:
     - ${ns1}
     - ${ns2}
-  ## enable for production
   extensionServices:
     - name: tailscale
       environment: 
         - TS_AUTHKEY=${tailscaleAuthKey}
-  ## remove for production
-  schematic:
-    customization:
-      systemExtensions:
-        officialExtensions:
-        ## remove for production
-          - siderolabs/util-linux-tools
   patches:
     - |-
       - op: add
         path: /machine/kubelet/nodeIP
         validSubnets:
-          - ${nvmfSubnet}
+          - ${apiSubnet}
     - |-
       - op: add
         path: /machine/time
