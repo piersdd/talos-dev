@@ -50,7 +50,7 @@ nodes:
         vlans:
           - vlanId: ${realworldVLAN}
             addresses:
-              - ${rwDummyIP}          
+              - ${rwDummyIP}
           - vlanId: ${appServiceVLAN}
             addresses:
               - ${master1appServiceIP}/${appServiceSubnetCIDR}
@@ -67,7 +67,6 @@ nodes:
     installDisk: ${master2installDisk}
     machineDisks:
       - device: ${master2MachineDisk_mayastor}
-        label: mayastor
     networkInterfaces:
       - interface: ${master2bond0aDev}
         dhcp: false
@@ -131,7 +130,7 @@ nodes:
         vlans:
           - vlanId: ${realworldVLAN}
             addresses:
-              - ${rwDummyIP}          
+              - ${rwDummyIP}
           - vlanId: ${appServiceVLAN}
             addresses:
               - ${master3appServiceIP}/${appServiceSubnetCIDR}
