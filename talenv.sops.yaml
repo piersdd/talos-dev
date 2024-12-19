@@ -40,7 +40,7 @@ master1apiIP: 172.20.35.165
 master1etcd1IP: 10.13.1.5
 master1etcd2IP: 10.13.2.5
 master1nvmfIP: 10.13.3.5
-master1appServiceIP: 172.20.33.14
+master1appServiceIP: 172.20.33.31
 master1installDisk: /dev/vda
 master1MachineDisk_mayastor: /dev/sda
 master1bond0aDev: enx00a0985316a9
@@ -54,7 +54,7 @@ master2apiIP: 172.20.35.166
 master2etcd1IP: 10.13.1.6
 master2etcd2IP: 10.13.2.6
 master2nvmfIP: 10.13.3.6
-master2appServiceIP: 172.20.33.15
+master2appServiceIP: 172.20.33.32
 master2installDisk: /dev/vda
 master2MachineDisk_mayastor: /dev/sda
 master2bond0aDev: enx00a098212532
@@ -68,7 +68,7 @@ master3apiIP: 172.20.35.167
 master3etcd1IP: 10.13.1.7
 master3etcd2IP: 10.13.2.7
 master3nvmfIP: 10.13.3.7
-master3appServiceIP: 172.20.33.16
+master3appServiceIP: 172.20.33.33
 master3installDisk: /dev/vda
 master3MachineDisk_mayastor: /dev/sda
 master3bond0aDev: enx00a09860d6cd
@@ -80,7 +80,7 @@ master3tailscaleIP: ENC[AES256_GCM,data:fzrRHJmpbaOaDziV,iv:Nde2P7/CsuONciaoz9pZ
 worker1hostname: k8s-worker-1-gpu
 worker1apiIP: 172.20.35.171
 worker1nvmfIP: 10.13.3.11
-worker1appServiceIP: 172.20.33.17
+worker1appServiceIP: 172.20.33.35
 worker1installDisk: /dev/vda
 worker1v93apiDev: enx00a0985b3155
 worker1bond1aDev: enx00a0983608b1
@@ -90,7 +90,7 @@ worker1tailscaleIP: ENC[AES256_GCM,data:24703+OqkYsv9YTIAQw=,iv:Ai+zxZI9qVCjlSCL
 worker2hostname: k8s-worker-2
 worker2apiIP: 172.20.35.172
 worker2nvmfIP: 10.13.3.12
-worker2appServiceIP: 172.20.33.18
+worker2appServiceIP: 172.20.33.36
 worker2installDisk: /dev/vda
 worker2v93apiDev: enx00a098387305
 worker2bond1aDev: enx00a0985d505a
@@ -111,8 +111,8 @@ sops:
             NjZGaEQ5Tmp3RElGeHA1cXFkcnYyMUEKalpXi4RF8PtzO4vEAiwZ6rEmsG2S6vl/
             VEOP3SsMeKpx54LhEIH/Z988kj6zSTc06zkwOWHPwKYa6Fm5TJoA6w==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-12-18T08:03:35Z"
-    mac: ENC[AES256_GCM,data:NFskOL8KPiZKnCdhEfVa9QEPIPbfA3RaOOzw2Fg0iEBznK4UC30kGpHORTtJQM5Ru+p8FJffibv9o5XGjXsqaF4uQxtXhxRG1baRGMwClvchIzgKhH6bUrXZoCeMr1jryVWrHaZIlsANieJLZZXgm8qDmfjIYasNepE4zqsASHk=,iv:dFEQ6GGVZRLkYyZwoAILe9+xkxyhqgyShmeCUTqe6q4=,tag:6HKE5zBTGra3Es75T0qGuA==,type:str]
+    lastmodified: "2024-12-19T23:01:27Z"
+    mac: ENC[AES256_GCM,data:QogaFVB+jLAklBqWNEMoHwK8/969FZYFNnERar0RfGCcTBxKS09V6tOklQ50IB9R1tbWPNL5u22toerD3GY3Xs/e7ihzrfl6GKN7fbZwZxEjbbWYTY6giTkmPHq06XnrqzteGTNKBCWYrLIvNUtiUxeAi9Ch9aZ8u3XnEvQoNv4=,iv:wKRtPFGI4jVQutyUC440nIczsf/e2O7adykaYNhStUE=,tag:goj+3x0kd1ltN2LWZMJvwA==,type:str]
     pgp: []
     encrypted_regex: ((?i)(tailscaleAuthKey|rwDummyIP|domainName|.*tailscaleIP$))
     version: 3.9.2
