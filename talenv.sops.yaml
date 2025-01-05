@@ -1,8 +1,8 @@
 # talenv.sops.yaml
 clusterName: dev
 domainName: ENC[AES256_GCM,data:EVFTMWURIaxjfF4=,iv:QKF1dCsy2xROiQUGS1VgoXBTg/f/jz8zkXe8hKr7GpA=,tag:XHIZya4srNWHedUaqqV0Gw==,type:str]
-talosVersion: v1.9.1
-kubernetesVersion: v1.32.0
+talosVersion: v1.8.4
+kubernetesVersion: v1.31.4
 #
 tailscaleAuthKey: ENC[AES256_GCM,data:BiypngS1v1kWxPFe09uQ7RWzcQS9DEiB+v5UH/WI3PGbDs+uchME1frO+s3/qeqUEAGgSm1rQsKdhT3AKOs=,iv:NitneDNV8xYUZCkIqXsQqBPTS/WHMJdEvOmPp0E6Nu8=,tag:LgbYU7D+pG61++7mvG0Bgw==,type:str]
 clusterSite: sb
@@ -111,8 +111,8 @@ sops:
             NjZGaEQ5Tmp3RElGeHA1cXFkcnYyMUEKalpXi4RF8PtzO4vEAiwZ6rEmsG2S6vl/
             VEOP3SsMeKpx54LhEIH/Z988kj6zSTc06zkwOWHPwKYa6Fm5TJoA6w==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-05T06:08:56Z"
-    mac: ENC[AES256_GCM,data:IQGvRYvkbP2+nO27G/gXX0qu4p/+vDE8IiXW6pGqbjTQ04CINwLPYpN7KXqcnxdP4PRk8fmcgT+PfaW2fH1gC7ZnDDLekEISwJmMBxi7wCxe19/7JofsxLj476Szj1px8x1OQF3mJAMvTdfaVoorq+7bVa4MijT2YzKXFofYJWw=,iv:+BTkopIqZrpBxBjap9tm/cg9l2lkBaZH/me9dJc/x9Q=,tag:I/29BY5wTJW5xIrEMDvdPw==,type:str]
+    lastmodified: "2025-01-05T07:36:23Z"
+    mac: ENC[AES256_GCM,data:PLQWXhqY4e7GHC7Ef04O6YES/MAUdSBqcWKtcfUGGuAcvneGQe2NG/p3dugUXYhopqNCSGgkiEsqCiU70gGw5x2+JLiZaVWykr6earDBHmYehtvER1gQyDetxIuP5j3ow45sWq9/dF9egIJ/8SBEufo2dCYkcaYdJ6qgDEabxFQ=,iv:3pMrlbFeDXVszjVmnnF6SK49Fb+uJhH8Yjl0/tO0MNs=,tag:TBdLJ4CXcw/6VxXKkFzKXg==,type:str]
     pgp: []
     encrypted_regex: ((?i)(tailscaleAuthKey|rwDummyIP|domainName|.*tailscaleIP$))
     version: 3.9.3
