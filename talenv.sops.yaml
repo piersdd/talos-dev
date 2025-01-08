@@ -42,7 +42,7 @@ master1etcd2IP: 10.13.2.5
 master1nvmfIP: 10.13.3.5
 master1appServiceIP: 172.20.33.31
 master1installDisk: /dev/vda
-master1MachineDisk_mayastor: /dev/sda
+master1MachineDisk_mayastor: /dev/vdb
 master1bond0aDev: enx00a0985316a9
 master1bond0bDev: enx00a09862ab23
 master1bond1aDev: enx00a09870389e
@@ -56,7 +56,7 @@ master2etcd2IP: 10.13.2.6
 master2nvmfIP: 10.13.3.6
 master2appServiceIP: 172.20.33.32
 master2installDisk: /dev/vda
-master2MachineDisk_mayastor: /dev/sda
+master2MachineDisk_mayastor: /dev/vdb
 master2bond0aDev: enx00a098212532
 master2bond0bDev: enx00a09836df97
 master2bond1aDev: enx00a09839e45b
@@ -70,7 +70,7 @@ master3etcd2IP: 10.13.2.7
 master3nvmfIP: 10.13.3.7
 master3appServiceIP: 172.20.33.33
 master3installDisk: /dev/vda
-master3MachineDisk_mayastor: /dev/sda
+master3MachineDisk_mayastor: /dev/vdb
 master3bond0aDev: enx00a09860d6cd
 master3bond0bDev: enx00a09832fbaa
 master3bond1aDev: enx00a09842bffc
@@ -111,8 +111,8 @@ sops:
             NjZGaEQ5Tmp3RElGeHA1cXFkcnYyMUEKalpXi4RF8PtzO4vEAiwZ6rEmsG2S6vl/
             VEOP3SsMeKpx54LhEIH/Z988kj6zSTc06zkwOWHPwKYa6Fm5TJoA6w==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-05T07:36:23Z"
-    mac: ENC[AES256_GCM,data:PLQWXhqY4e7GHC7Ef04O6YES/MAUdSBqcWKtcfUGGuAcvneGQe2NG/p3dugUXYhopqNCSGgkiEsqCiU70gGw5x2+JLiZaVWykr6earDBHmYehtvER1gQyDetxIuP5j3ow45sWq9/dF9egIJ/8SBEufo2dCYkcaYdJ6qgDEabxFQ=,iv:3pMrlbFeDXVszjVmnnF6SK49Fb+uJhH8Yjl0/tO0MNs=,tag:TBdLJ4CXcw/6VxXKkFzKXg==,type:str]
+    lastmodified: "2025-01-08T12:25:44Z"
+    mac: ENC[AES256_GCM,data:yGt9aujCMb346mXqfV5RbvCaZGFfwF1Bn0Uo+AIhjPTrgRrVQ8mZcZpXDdEmOf9Qlm6UkoNWHyBcY7LSmQJmeaylakj/bYZL8fYBZaLNxxpsKT8g8ONYP+bnRcL/V/zhVRtwVhwCi7RC09kFN+cUPR+U5Bh2ulVuk0wuEuG1y/4=,iv:qI3B2B7Anzs9f8Fkr821vWo++ZqrZIr2F1h6V03K0Wk=,tag:u9ok+/oaqMQruB1t/kzI+g==,type:str]
     pgp: []
     encrypted_regex: ((?i)(tailscaleAuthKey|rwDummyIP|domainName|.*tailscaleIP$))
     version: 3.9.3
