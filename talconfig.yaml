@@ -187,6 +187,12 @@ nodes:
             - siderolabs/qemu-guest-agent
             - siderolabs/tailscale
     patches:
+      - |-
+        - op: add
+          path: /machine/kubelet/nodeIP
+          value:
+            validSubnets:
+              - ${apiSubnet}
   ## Nvidia GPU
       - |-
         - op: add
@@ -259,6 +265,12 @@ nodes:
             - siderolabs/qemu-guest-agent
             - siderolabs/tailscale
     patches:
+      - |-
+        - op: add
+          path: /machine/kubelet/nodeIP
+          value:
+            validSubnets:
+              - ${apiSubnet}
       - |-
         - op: add
           path: /machine/kubelet/extraMounts
